@@ -38,8 +38,7 @@ if (isset($_POST["signUp"])) {
             $stmt->execute(array($username,password_hash($password,PASSWORD_DEFAULT)));
             $userid = $pdo->lastinsertid();
 
-            $signUpMessage = '登録が完了しました。あなたの登録IDは '. $userid. ' です。
-            パスワードは '. $password. ' です。';
+            $signUpMessage = '登録が完了しました。あなたの登録IDは '. $userid. ' です。';
         } catch (PDOException $e) {
             $errorMessage = 'データベースエラー';
         }
